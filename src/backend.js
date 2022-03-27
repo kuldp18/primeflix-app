@@ -1,1 +1,1 @@
-export const API = 'http://primeflixapis.herokuapp.com/api';
+export const API = 'https://primeflixapis.herokuapp.com/api';
