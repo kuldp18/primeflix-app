@@ -1,26 +1,9 @@
 import React from 'react';
 import Header from '../Header';
-import { isAuthenticated } from '../../helpers/auth';
-import { API } from '../../backend';
 import { Link } from 'react-router-dom';
 import './UserDashboard.css';
 
 const UserDashboard = () => {
-  const token = isAuthenticated();
-  const getMovies = async () => {
-    try {
-      const response = await fetch(`${API}/getMovies`, {
-        headers: {
-          token,
-          'Content-Type': 'application/json',
-        },
-      });
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   return (
     <>
       <Header />

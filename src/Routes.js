@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import UserDashboard from './components/UserDashboard';
+import Movies from './components/Movies';
 
 const Routes = () => {
   return (
@@ -14,6 +15,7 @@ const Routes = () => {
         <Route path="/register" exact component={Register} />
         <Route path="/login" exact component={Login} />
         <PrivateRoute path="/user/dashboard" exact component={UserDashboard} />
+        <PrivateRoute path="/movies" exact component={Movies} />
       </Switch>
     </Router>
   );
