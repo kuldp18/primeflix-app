@@ -8,6 +8,7 @@ import './Movies.css';
 const Movies = () => {
   const token = isAuthenticated();
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getMovies();
@@ -15,6 +16,7 @@ const Movies = () => {
 
   const getMovies = async () => {
     try {
+      setLoading(true);
       const response = await fetch(`${API}/getMovies`, {
         headers: {
           token,
@@ -23,21 +25,26 @@ const Movies = () => {
       });
       const data = await response.json();
       setMovies(data);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
   return (
     <>
       <Header />
+
       <div className="movies-container">
-        {movies.map((movie) => {
-          return (
-            <div className="movie" key={uuidv4()}>
-              <h1>{movie.title}</h1>
-            </div>
-          );
-        })}
+        {loading
+          ? 'Loading movies....'
+          : movies.map((movie) => {
+              return (
+                <div className="movie" key={uuidv4()}>
+                  <h1>{movie.title}</h1>
+                </div>
+              );
+            })}
       </div>
     </>
   );

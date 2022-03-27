@@ -1,0 +1,25 @@
+.add-movie-form {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  background: -webkit-linear-gradient(
+    to bottom,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.add-movie-form input {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  padding: 15px;
+  border: none;
+  outline: none;
+}
