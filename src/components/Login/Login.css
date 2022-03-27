@@ -1,0 +1,38 @@
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  background: -webkit-linear-gradient(
+    to bottom,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.login-form input {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  width: 50%;
+  padding: 15px;
+  border: none;
+  outline: none;
+}
+.submit-btn {
+  font-size: 1.5rem;
+  padding: 1rem 1.7rem;
+  cursor: pointer;
+  background-color: #0a122a;
+  color: #fbfaf8;
+  outline: none;
+  border: none;
+}
+.submit-btn:hover {
+  background-color: #0a122ad7;
+}
