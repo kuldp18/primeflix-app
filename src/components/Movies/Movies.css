@@ -18,4 +18,31 @@
 }
 .movie {
   margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+.icon {
+  margin: 15px;
+  font-size: 1.7rem;
+}
+
+.delete-icon:hover {
+  color: red;
+}
+.edit-icon:hover {
+  color: yellow;
+}
+
+.genre {
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.movie-title {
+  display: flex;
+  align-items: center;
 }

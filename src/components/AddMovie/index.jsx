@@ -25,7 +25,8 @@ const AddMovie = () => {
         body: JSON.stringify({ title, genre }),
       });
       const data = await response.json();
-      console.log(data);
+      setTitle('');
+      setGenre('');
     } catch (error) {
       console.log(error);
     }
