@@ -10,7 +10,6 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [didRedirect, setDidRedirect] = useState(false);
   const user = isAuthenticated();
-  console.log(user);
   const handleSubmit = (e) => {
     e.preventDefault();
     loginUser(email, password);

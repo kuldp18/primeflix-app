@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { isAuthenticated } from '../../helpers/auth';
 const Header = () => {
   return (
     <header className="header">
@@ -8,11 +9,13 @@ const Header = () => {
         <Link to="/">Primeflix</Link>
       </h1>
       <ul>
+        <li>{isAuthenticated() ? '' : <Link to="/register">Register</Link>}</li>
         <li>
-          <Link to="/register">Register</Link>
-        </li>
-        <li>
-          <Link to="/login">Login</Link>
+          {isAuthenticated() ? (
+            <Link to="/user/dashboard">Dashboard</Link>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
         </li>
       </ul>
     </header>

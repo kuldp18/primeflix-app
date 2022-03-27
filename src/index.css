@@ -8,3 +8,13 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+.btn {
+  font-size: 1.5rem;
+  padding: 1rem 1.7rem;
+  cursor: pointer;
+  background-color: #0a122a;
+  color: #fbfaf8;
+  outline: none;
+  border: none;
+}
