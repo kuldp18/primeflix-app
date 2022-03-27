@@ -5,6 +5,7 @@ import { isAuthenticated } from '../../helpers/auth';
 import { v4 as uuidv4 } from 'uuid';
 import './Movies.css';
 import { MdModeEditOutline, MdDelete } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Movies = () => {
   const token = isAuthenticated();
@@ -64,7 +65,9 @@ const Movies = () => {
                     {movie.title} <span className="genre">({movie.genre})</span>
                   </h1>
 
-                  <MdModeEditOutline className="edit-icon icon" />
+                  <Link to={`/edit/movie/${movie._id}`}>
+                    <MdModeEditOutline className="edit-icon icon" />
+                  </Link>
                   <MdDelete
                     className="delete-icon icon"
                     onClick={() => handleDelete(movie._id)}
