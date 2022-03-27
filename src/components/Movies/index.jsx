@@ -11,6 +11,8 @@ const Movies = () => {
   const token = isAuthenticated();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getMovies();
@@ -27,9 +29,11 @@ const Movies = () => {
         },
       });
       const deletedMovie = await response.json();
-      console.log(deletedMovie);
+      setSuccess(true);
       setMovies(movies.filter((movie) => movie._id !== deletedMovie._id));
     } catch (error) {
+      setSuccess(false);
+      setError(true);
       console.log(error);
     }
   };
@@ -51,11 +55,26 @@ const Movies = () => {
       console.log(error);
     }
   };
+
+  const successMessage = () => {
+    if (success) {
+      return <p className="message success-message">Movie deleted!</p>;
+    }
+  };
+  const errorMessage = () => {
+    if (error) {
+      return (
+        <p className="message error-message">Movie could not be deleted!</p>
+      );
+    }
+  };
   return (
     <>
       <Header />
 
       <div className="movies-container">
+        {successMessage()}
+        {errorMessage()}
         {loading
           ? 'Loading movies....'
           : movies.map((movie) => {
